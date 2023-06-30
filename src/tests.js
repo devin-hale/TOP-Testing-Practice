@@ -33,7 +33,16 @@ const reverseString = (string) => {
     return reversedArray.join('');
 }
 
+//Calculator object with basic functions.
+
+const calculator = {
+    add: (a,b) => a + b,
+    subtract: (a,b) => a - b,
+    divide: (a,b) => a/b,
+    multiply: (a,b) => a*b
+}
 
 
 
-export {capitalize, reverseString}
+
+export {capitalize, reverseString, calculator}
