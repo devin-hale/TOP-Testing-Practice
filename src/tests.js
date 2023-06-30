@@ -70,6 +70,36 @@ const caesarCipher = (string) => {
 }
 
 
+//
+
+const analyzeArray = (array) => {
+    let object = {};
+
+    // Adds all array values and divides by length of the array.
+    let average = (array.reduce((sum, current) => sum + current, 0))/array.length
+    // Sorts array in ascending order, returns first element.
+    let min = (array.sort( (a,b) => {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
+    }))[0]
+    // Sorts Array in ascending order.  Returns first last element.
+    let max = (array.sort( (a,b) => {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
+    }))[array.length-1]
+    //Array length
+    let length = array.length;
+
+    //Sets these values as keys to the object.
+    object['average'] = average;
+    object['min'] = min;
+    object['max'] = max;
+    object['length'] = length;
+
+    return object;
+}
 
 
-export {capitalize, reverseString, calculator, caesarCipher}
+export {capitalize, reverseString, calculator, caesarCipher, analyzeArray}
