@@ -42,7 +42,34 @@ const calculator = {
     multiply: (a,b) => a*b
 }
 
+//Takes string and returns it shifted one letter in the alphabet to the right.
+
+const caesarCipher = (string) => {
+    //This just takes the ABC's and turns it into an array for reference because I didn't want to type an ABC's array manually.
+    let abc = 'abcdefghijklmnopqrstuvwxyz';
+    abc = abc.split('');
+
+    //Splits string into an array of each char.
+    let splitString = string.split('');
+
+    //Takes each element of splitString array, and shifts it forward one letter in the alphabet.
+    splitString.forEach((el, index) => {
+        if (el === ' ') splitString[index] = ' '
+        //Checks if the element is the letter 'z'
+        else if (el === 'z') splitString[index] = 'a'
+        else {
+            //Finds index of element in ABC array.
+            let elIndex = abc.indexOf(el)
+            //Sets element to be equal to the next index in the ABC array.
+            splitString[index] = abc[elIndex+1]
+        };
+    });
+
+    return splitString.join('');
+
+}
 
 
 
-export {capitalize, reverseString, calculator}
+
+export {capitalize, reverseString, calculator, caesarCipher}
