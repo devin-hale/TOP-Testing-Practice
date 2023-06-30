@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "y": "^0.3.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "jest": "^29.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
